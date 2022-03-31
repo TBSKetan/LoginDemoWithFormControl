@@ -1,21 +1,30 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <!-- Default back button -->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{constantLogin.loginLogInButton}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form  (ngSubmit)="(onSubmit)">
-    <div>
-      <label> User email</label>
-      <input id="email" type="email" formControlName="email" />
-    </div>
-
-    <div>
-      <label>Password</label>
-      <input id="password" type="password" formControlName="password">
-    </div>
-
-    <button class="button" type="submit" mat-button>Login</button>
+  <form [formGroup]="ionicForm"  (ngSubmit)="submitForm()" novalidate>
+    <!-- You can use ion-item position with different types like : "full" ｜ "inset" ｜ "none" ｜ undefined -->
+    <ion-item lines="full">
+      <!-- You can use ion-label position with different types like : "fixed" ｜ "floating" ｜ "stacked" ｜ undefined -->
+      <ion-label position="floating">{{constantLogin.loginEmail}}</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">{{constantLogin.loginPassword}}</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">{{constantLogin.loginSignInButton}}</ion-button>
+        <a [routerLink]="['/forgot-password']" class="small-text">{{constantLogin.loginForgotPassword}}</a >
+      </ion-col>
+    </ion-row>
   </form>
 </ion-content>

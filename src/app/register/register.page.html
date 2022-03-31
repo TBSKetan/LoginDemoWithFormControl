@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Default back button -->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{stringRegister.registration}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating"
+        >{{stringRegister.registrationFirstName}}</ion-label
+      >
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating"
+        >{{stringRegister.registrationLastName}}</ion-label
+      >
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating"
+        >{{stringRegister.registrationEmail}}</ion-label
+      >
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating"
+        >{{stringRegister.registrationPassword}}</ion-label
+      >
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" shape="round" expand="block"
+          >{{stringConst.loginSignInButton}}</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
