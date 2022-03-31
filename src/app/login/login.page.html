@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  (ngSubmit)="(onSubmit)">
+    <div>
+      <label> User email</label>
+      <input id="email" type="email" formControlName="email" />
+    </div>
+
+    <div>
+      <label>Password</label>
+      <input id="password" type="password" formControlName="password">
+    </div>
+
+    <button class="button" type="submit" mat-button>Login</button>
+  </form>
+</ion-content>
