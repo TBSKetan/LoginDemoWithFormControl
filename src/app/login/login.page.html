@@ -9,20 +9,20 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="ionicForm"  (ngSubmit)="submitForm()" novalidate>
+  <form>
     <!-- You can use ion-item position with different types like : "full" ｜ "inset" ｜ "none" ｜ undefined -->
     <ion-item lines="full">
       <!-- You can use ion-label position with different types like : "fixed" ｜ "floating" ｜ "stacked" ｜ undefined -->
       <ion-label position="floating">{{constantLogin.loginEmail}}</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="email" name="email" required></ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">{{constantLogin.loginPassword}}</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">{{constantLogin.loginSignInButton}}</ion-button>
+        <ion-button (click)="signUp()" color="danger" expand="block">{{constantLogin.loginSignInButton}}</ion-button>
         <a [routerLink]="['/forgot-password']" class="small-text">{{constantLogin.loginForgotPassword}}</a >
       </ion-col>
     </ion-row>

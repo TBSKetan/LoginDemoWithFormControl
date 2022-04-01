@@ -1,3 +1,4 @@
+import { NavigationService } from './../navigation.service';
 import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
@@ -5,6 +6,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CONSTANT } from '../utility/constantLogin';
 
 @Component({
@@ -13,15 +15,26 @@ import { CONSTANT } from '../utility/constantLogin';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  ionicForm: FormGroup;
+  [x: string]: any;
   public constantLogin = CONSTANT;
-  email = '';
-  password = '';
+  email: string | '';
+  password: string | '';
 
-  constructor(public formBuilder: FormBuilder) {}
+  constructor(
+    private router: Router,
+    private navigationService: NavigationService,
+  ) {}
   ngOnInit() {}
 
-  submitForm() {
-    console.log(this.ionicForm.value);
+  signUp(){
+    console.log('email',this.email);
+    console.log('password', this.password);
+    const userData = {
+      email: this.email,
+      password: this.password
+    };
+    this.navigationService.setNavigationData(userData);
+    //this.router.navigate(['home/ ' + JSON.stringify(userData)]);
+    this.router.navigate(['register']);
   }
 }

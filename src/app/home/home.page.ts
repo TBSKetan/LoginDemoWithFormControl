@@ -1,6 +1,7 @@
 import { CONSTANT } from '../utility/constantLogin';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { NavigationService } from '../navigation.service';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
   public constantString = CONSTANT;
 
-  constructor(public router: Router) {
-    if (router.getCurrentNavigation().extras.state) {
-      const params = this.router.getCurrentNavigation().extras.state;
-console.log(params.email);
-console.log(params.password);
-console.log(params.country);
-    }
+
+  constructor() {
   }
 
   onRegister(){
