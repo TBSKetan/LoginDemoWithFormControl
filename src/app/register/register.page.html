@@ -2,7 +2,7 @@
   <ion-toolbar>
     <!-- Default back button -->
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>{{stringRegister.registration}}</ion-title>
   </ion-toolbar>
@@ -12,7 +12,7 @@
   <h3>{{data.email}}</h3>
   <h3>{{data.password}}</h3>
 
-  <form>
+  <form class="ion-margin">
     <ion-item lines="full">
       <ion-label position="floating"
         >{{stringRegister.registrationFirstName}}</ion-label

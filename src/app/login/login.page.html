@@ -2,14 +2,14 @@
   <ion-toolbar>
     <!-- Default back button -->
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>{{constantLogin.loginLogInButton}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form>
+  <form class="ion-margin">
     <!-- You can use ion-item position with different types like : "full" ｜ "inset" ｜ "none" ｜ undefined -->
     <ion-item lines="full">
       <!-- You can use ion-label position with different types like : "fixed" ｜ "floating" ｜ "stacked" ｜ undefined -->
@@ -23,7 +23,7 @@
     <ion-row>
       <ion-col>
         <ion-button (click)="signUp()" color="danger" expand="block">{{constantLogin.loginSignInButton}}</ion-button>
-        <a [routerLink]="['/forgot-password']" class="small-text">{{constantLogin.loginForgotPassword}}</a >
+        <a class="ion-margin-top" [routerLink]="['/forgot-password']" class="small-text">{{constantLogin.loginForgotPassword}}</a >
       </ion-col>
     </ion-row>
   </form>
